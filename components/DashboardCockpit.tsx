@@ -105,34 +105,259 @@ const demoContractors: ContractorRow[] = [
 
 const demoFinance: FinanceRow[] = [
   {
-    id: "demo-finance-1",
+    id: "seed-land",
     property_id: "demo-property",
     contractor_id: null,
-    direction: "investment",
-    category: "Owner capital",
-    title: "Initial land / project investment placeholder",
-    amount: 0,
-    transaction_date: "2026-04-25",
+    direction: "expense",
+    category: "Land",
+    title: "Land",
+    amount: 18000,
+    transaction_date: "2025-01-01",
     payment_method: null,
-    paid_to: null,
+    paid_to: "Land acquisition / seller",
     paid_by: "Owner",
     invoice_number: null,
-    notes: "Replace this with actual money invested so far."
+    notes: "Imported from Three Pond investment tracker. Attach closing docs or receipt."
   },
   {
-    id: "demo-finance-2",
+    id: "seed-development",
     property_id: "demo-property",
     contractor_id: "demo-contractor-1",
     direction: "expense",
-    category: "Contractor",
-    title: "Contractor payment placeholder",
-    amount: 0,
-    transaction_date: "2026-04-25",
+    category: "Development",
+    title: "Development",
+    amount: 18000,
+    transaction_date: "2025-01-05",
     payment_method: null,
-    paid_to: "Local cabin contractor",
+    paid_to: "Site development",
     paid_by: "Owner",
     invoice_number: null,
-    notes: "Track every contractor payment, invoice number, and scope."
+    notes: "Imported from tracker. Add contractor scope, invoice, and receipts."
+  },
+  {
+    id: "seed-canvas-tent-main",
+    property_id: "demo-property",
+    contractor_id: null,
+    direction: "expense",
+    category: "CanvasCamp",
+    title: "Canvas tent",
+    amount: 4000,
+    transaction_date: "2025-02-01",
+    payment_method: null,
+    paid_to: "Canvas tent vendor",
+    paid_by: "Owner",
+    invoice_number: null,
+    notes: "Main 20x20 tent platform experience."
+  },
+  {
+    id: "seed-deck",
+    property_id: "demo-property",
+    contractor_id: null,
+    direction: "expense",
+    category: "Deck",
+    title: "Deck",
+    amount: 2000,
+    transaction_date: "2025-02-15",
+    payment_method: null,
+    paid_to: "Materials / labor",
+    paid_by: "Owner",
+    invoice_number: null,
+    notes: "Attach material receipts and build photos."
+  },
+  {
+    id: "seed-cedar-boat",
+    property_id: "demo-property",
+    contractor_id: null,
+    direction: "expense",
+    category: "Pond",
+    title: "Cedar boat",
+    amount: 900,
+    transaction_date: "2025-03-01",
+    payment_method: null,
+    paid_to: "Boat seller",
+    paid_by: "Owner",
+    invoice_number: null,
+    notes: "Guest amenity / pond experience."
+  },
+  {
+    id: "seed-chair-table",
+    property_id: "demo-property",
+    contractor_id: null,
+    direction: "expense",
+    category: "Hospitality",
+    title: "Chair table set",
+    amount: 220,
+    transaction_date: "2025-03-12",
+    payment_method: null,
+    paid_to: "Furniture vendor",
+    paid_by: "Owner",
+    invoice_number: null,
+    notes: "Outdoor seating."
+  },
+  {
+    id: "seed-yarbo",
+    property_id: "demo-property",
+    contractor_id: null,
+    direction: "expense",
+    category: "Equipment",
+    title: "Yarbo lawn mower",
+    amount: 2450,
+    transaction_date: "2025-03-20",
+    payment_method: null,
+    paid_to: "Yarbo",
+    paid_by: "Owner",
+    invoice_number: null,
+    notes: "Try to sell this."
+  },
+  {
+    id: "seed-well",
+    property_id: "demo-property",
+    contractor_id: "demo-contractor-1",
+    direction: "expense",
+    category: "Well",
+    title: "Well",
+    amount: 13000,
+    transaction_date: "2025-04-01",
+    payment_method: null,
+    paid_to: "Well contractor",
+    paid_by: "Owner",
+    invoice_number: null,
+    notes: "Critical utility. Add permit, depth, flow report, invoice, and photos."
+  },
+  {
+    id: "seed-septic",
+    property_id: "demo-property",
+    contractor_id: "demo-contractor-1",
+    direction: "expense",
+    category: "Septic",
+    title: "Septic",
+    amount: 11000,
+    transaction_date: "2025-04-10",
+    payment_method: null,
+    paid_to: "Septic contractor",
+    paid_by: "Owner",
+    invoice_number: null,
+    notes: "Attach approved design, invoice, and inspection."
+  },
+  {
+    id: "seed-linens",
+    property_id: "demo-property",
+    contractor_id: null,
+    direction: "expense",
+    category: "Hospitality",
+    title: "India linens",
+    amount: 150,
+    transaction_date: "2025-04-20",
+    payment_method: null,
+    paid_to: "Linens vendor",
+    paid_by: "Owner",
+    invoice_number: null,
+    notes: "Guest setup."
+  },
+  {
+    id: "seed-red-barn",
+    property_id: "demo-property",
+    contractor_id: null,
+    direction: "expense",
+    category: "Barn",
+    title: "Red barn shed",
+    amount: 5200,
+    transaction_date: "2025-05-01",
+    payment_method: null,
+    paid_to: "Shed vendor",
+    paid_by: "Owner",
+    invoice_number: null,
+    notes: "Operational storage and road-side asset."
+  },
+  {
+    id: "seed-permissions",
+    property_id: "demo-property",
+    contractor_id: null,
+    direction: "expense",
+    category: "Permits",
+    title: "Ben permissions fee",
+    amount: 2000,
+    transaction_date: "2025-05-10",
+    payment_method: null,
+    paid_to: "Ben / permits",
+    paid_by: "Owner",
+    invoice_number: null,
+    notes: "Clarify permit scope and attach docs."
+  },
+  {
+    id: "seed-canvas-tent-extra",
+    property_id: "demo-property",
+    contractor_id: null,
+    direction: "expense",
+    category: "CanvasCamp",
+    title: "Canvas tent",
+    amount: 600,
+    transaction_date: "2025-05-18",
+    payment_method: null,
+    paid_to: "Tent vendor",
+    paid_by: "Owner",
+    invoice_number: null,
+    notes: "Additional tent setup cost."
+  },
+  {
+    id: "seed-canvas-stove",
+    property_id: "demo-property",
+    contractor_id: null,
+    direction: "expense",
+    category: "CanvasCamp",
+    title: "Canvas tent stove",
+    amount: 600,
+    transaction_date: "2025-05-22",
+    payment_method: null,
+    paid_to: "Stove vendor",
+    paid_by: "Owner",
+    invoice_number: null,
+    notes: "Cold-weather tent upgrade."
+  },
+  {
+    id: "seed-misc-2025",
+    property_id: "demo-property",
+    contractor_id: null,
+    direction: "expense",
+    category: "Misc",
+    title: "Miscellaneous purchase in 2025",
+    amount: 1000,
+    transaction_date: "2025-06-01",
+    payment_method: null,
+    paid_to: "Various",
+    paid_by: "Owner",
+    invoice_number: null,
+    notes: "Break out later into detailed receipts."
+  },
+  {
+    id: "seed-soil-test",
+    property_id: "demo-property",
+    contractor_id: "demo-contractor-1",
+    direction: "expense",
+    category: "Septic",
+    title: "Septic and soil test",
+    amount: 1575,
+    transaction_date: "2025-06-12",
+    payment_method: null,
+    paid_to: "Soil / septic tester",
+    paid_by: "Owner",
+    invoice_number: null,
+    notes: "Attach test report."
+  },
+  {
+    id: "seed-septic-hole",
+    property_id: "demo-property",
+    contractor_id: "demo-contractor-1",
+    direction: "expense",
+    category: "Septic",
+    title: "Septic hole",
+    amount: 500,
+    transaction_date: "2025-06-20",
+    payment_method: null,
+    paid_to: "Excavation",
+    paid_by: "Owner",
+    invoice_number: null,
+    notes: "Attach excavation photos."
   }
 ];
 
@@ -185,51 +410,42 @@ function SupabaseStatus({ property }: { property: PropertyRow | null }) {
     <div className="status-pill">
       {isSupabaseConfigured
         ? property
-          ? `Supabase live / ${property.name}`
-          : "Supabase configured / setup needed"
+          ? property.id === "demo-property"
+            ? `Password mode / local ${property.name}`
+            : `Supabase live / ${property.name}`
+          : "Password mode / local until Supabase session"
         : "Demo mode / add Supabase keys"}
     </div>
   );
 }
 
-function AuthGate({ children }: { children: React.ReactNode }) {
+const ownerPassword = process.env.NEXT_PUBLIC_OWNER_PASSWORD || "cedar2026";
+
+function PasswordGate({ children }: { children: React.ReactNode }) {
   const [checking, setChecking] = useState(true);
-  const [authed, setAuthed] = useState(!isSupabaseConfigured);
-  const [email, setEmail] = useState("");
+  const [unlocked, setUnlocked] = useState(false);
   const [password, setPassword] = useState("");
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    if (!supabase) {
-      setChecking(false);
-      return;
-    }
-
-    supabase.auth.getUser().then(({ data }) => {
-      setAuthed(Boolean(data.user));
-      setChecking(false);
-    });
-
-    const {
-      data: { subscription }
-    } = supabase.auth.onAuthStateChange((_event, session) => {
-      setAuthed(Boolean(session?.user));
-    });
-
-    return () => subscription.unsubscribe();
+    setUnlocked(window.localStorage.getItem("chai-cedar-owner-unlocked") === "true");
+    setChecking(false);
   }, []);
 
-  async function signIn(event: React.FormEvent<HTMLFormElement>) {
+  function unlock(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    if (!supabase) return;
     setError(null);
-    const { error: signInError } = await supabase.auth.signInWithPassword({ email, password });
-    if (signInError) setError(signInError.message);
+    if (password === ownerPassword) {
+      window.localStorage.setItem("chai-cedar-owner-unlocked", "true");
+      setUnlocked(true);
+      return;
+    }
+    setError("Wrong password.");
   }
 
   if (checking) return <main className="dashboard-main">Checking owner access...</main>;
 
-  if (!authed) {
+  if (!unlocked) {
     return (
       <main className="dashboard">
         <div className="dashboard-main" style={{ maxWidth: 520 }}>
@@ -237,12 +453,13 @@ function AuthGate({ children }: { children: React.ReactNode }) {
           <h1>
             <Lock size={34} /> Planning cockpit
           </h1>
-          <p className="dashboard-muted">Sign in with your Supabase Auth owner user.</p>
-          <form className="stack-form" onSubmit={signIn} style={{ marginTop: 24 }}>
-            <input aria-label="Email" placeholder="email" value={email} onChange={(event) => setEmail(event.target.value)} />
+          <p className="dashboard-muted">
+            Enter the shared Chai & Cedar owner password. This keeps the screen simple for you and your wife.
+          </p>
+          <form className="stack-form" onSubmit={unlock} style={{ marginTop: 24 }}>
             <input
-              aria-label="Password"
-              placeholder="password"
+              aria-label="Owner password"
+              placeholder="owner password"
               type="password"
               value={password}
               onChange={(event) => setPassword(event.target.value)}
@@ -259,6 +476,24 @@ function AuthGate({ children }: { children: React.ReactNode }) {
 
   return <>{children}</>;
 }
+
+function readStoredRows<T>(key: string, fallback: T[]) {
+  if (typeof window === "undefined") return fallback;
+  try {
+    const raw = window.localStorage.getItem(key);
+    return raw ? (JSON.parse(raw) as T[]) : fallback;
+  } catch {
+    return fallback;
+  }
+}
+
+function writeStoredRows<T>(key: string, rows: T[]) {
+  if (typeof window !== "undefined") {
+    window.localStorage.setItem(key, JSON.stringify(rows));
+  }
+}
+
+const trackerSeedTotal = demoFinance.reduce((sum, row) => sum + row.amount, 0);
 
 function Field({
   label,
@@ -277,7 +512,7 @@ function Field({
 
 export function DashboardCockpit() {
   const [activeTab, setActiveTab] = useState<DashboardTab>("overview");
-  const [property, setProperty] = useState<PropertyRow | null>(isSupabaseConfigured ? null : { id: "demo-property", name: "Three Pond" });
+  const [property, setProperty] = useState<PropertyRow | null>({ id: "demo-property", name: "Three Pond" });
   const [contractors, setContractors] = useState<ContractorRow[]>(demoContractors);
   const [financeRows, setFinanceRows] = useState<FinanceRow[]>(demoFinance);
   const [payments, setPayments] = useState<ContractorPaymentRow[]>(demoPayments);
@@ -334,7 +569,14 @@ export function DashboardCockpit() {
 
     const { data: userData } = await supabase.auth.getUser();
     const user = userData.user;
-    if (!user) return;
+    if (!user) {
+      setProperty({ id: "demo-property", name: "Three Pond" });
+      setContractors(readStoredRows("chai-cedar-contractors", demoContractors));
+      setFinanceRows(readStoredRows("chai-cedar-finance", demoFinance));
+      setPayments(readStoredRows("chai-cedar-payments", demoPayments));
+      setMilestones(readStoredRows("chai-cedar-milestones", demoMilestones));
+      return;
+    }
 
     let { data: properties, error: propertyError } = await supabase
       .from("properties")
@@ -391,6 +633,22 @@ export function DashboardCockpit() {
     reloadSupabaseData();
   }, []);
 
+  useEffect(() => {
+    if (property?.id === "demo-property") writeStoredRows("chai-cedar-contractors", contractors);
+  }, [contractors, property?.id]);
+
+  useEffect(() => {
+    if (property?.id === "demo-property") writeStoredRows("chai-cedar-finance", financeRows);
+  }, [financeRows, property?.id]);
+
+  useEffect(() => {
+    if (property?.id === "demo-property") writeStoredRows("chai-cedar-payments", payments);
+  }, [payments, property?.id]);
+
+  useEffect(() => {
+    if (property?.id === "demo-property") writeStoredRows("chai-cedar-milestones", milestones);
+  }, [milestones, property?.id]);
+
   const totals = useMemo(() => {
     const invested = financeRows.filter((row) => row.direction === "investment").reduce((sum, row) => sum + row.amount, 0);
     const spent = financeRows.filter((row) => row.direction === "expense").reduce((sum, row) => sum + row.amount, 0);
@@ -423,7 +681,7 @@ export function DashboardCockpit() {
       active: true
     };
 
-    if (supabase) {
+    if (supabase && property.id !== "demo-property") {
       const { error } = await supabase.from("contractors").insert({ ...row, id: undefined });
       if (error) {
         setMessage(error.message);
@@ -458,7 +716,7 @@ export function DashboardCockpit() {
       notes: financeForm.notes || null
     };
 
-    if (supabase) {
+    if (supabase && property.id !== "demo-property") {
       const { error } = await supabase.from("financial_transactions").insert({ ...row, id: undefined });
       if (error) {
         setMessage(error.message);
@@ -489,7 +747,7 @@ export function DashboardCockpit() {
       scope_notes: paymentForm.scopeNotes || null
     };
 
-    if (supabase) {
+    if (supabase && property.id !== "demo-property") {
       const { error } = await supabase.from("contractor_payments").insert({ ...row, id: undefined });
       if (error) {
         setMessage(error.message);
@@ -520,7 +778,7 @@ export function DashboardCockpit() {
       notes: milestoneForm.notes || null
     };
 
-    if (supabase) {
+    if (supabase && property.id !== "demo-property") {
       const { error } = await supabase.from("project_milestones").insert({ ...row, id: undefined });
       if (error) {
         setMessage(error.message);
@@ -547,7 +805,7 @@ export function DashboardCockpit() {
 
     setScenarios((current) => [draft, ...current]);
 
-    if (supabase) {
+    if (supabase && property?.id !== "demo-property") {
       await supabase.from("scenario_versions").insert({
         property_id: property?.id ?? null,
         title: draft.title,
@@ -562,8 +820,16 @@ export function DashboardCockpit() {
 
   const contractorName = (id: string | null) => contractors.find((contractor) => contractor.id === id)?.name ?? "Unassigned";
 
+  function importTrackerSeed() {
+    setFinanceRows(demoFinance);
+    setContractors(demoContractors);
+    setPayments(demoPayments);
+    setMilestones(demoMilestones);
+    setMessage(`Imported Three Pond tracker seed: ${currency(trackerSeedTotal)} across ${demoFinance.length} entries.`);
+  }
+
   return (
-    <AuthGate>
+    <PasswordGate>
       <main className="dashboard">
         <div className="dashboard-layout">
           <aside className="sidebar">
@@ -649,6 +915,15 @@ export function DashboardCockpit() {
                           <p>Investment plus revenue minus expenses entered so far.</p>
                         </div>
                         <span className="status-pill">live</span>
+                      </div>
+                      <div className="ledger-row">
+                        <div>
+                          <strong>Tracker import</strong>
+                          <p>Seed from the screenshot: land, development, tent, deck, well, septic, barn, permits, and supplies.</p>
+                        </div>
+                        <button className="tool-button" onClick={importTrackerSeed}>
+                          Import {currency(trackerSeedTotal)}
+                        </button>
                       </div>
                     </section>
                   </div>
@@ -739,7 +1014,12 @@ export function DashboardCockpit() {
                     </section>
 
                     <section className="workspace-panel">
-                      <h2>Ledger</h2>
+                      <div className="panel-title-row">
+                        <h2>Ledger</h2>
+                        <button className="tool-button" onClick={importTrackerSeed}>
+                          Reset to screenshot seed
+                        </button>
+                      </div>
                       {financeRows.map((row) => (
                         <div className="ledger-row" key={row.id}>
                           <div>
@@ -972,6 +1252,6 @@ export function DashboardCockpit() {
           </section>
         </div>
       </main>
-    </AuthGate>
+    </PasswordGate>
   );
 }

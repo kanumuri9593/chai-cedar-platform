@@ -489,6 +489,13 @@ a {
   padding: 22px;
 }
 
+.panel-title-row {
+  align-items: center;
+  display: flex;
+  gap: 14px;
+  justify-content: space-between;
+}
+
 .project-row,
 .ledger-row,
 .scenario-row {

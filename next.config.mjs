@@ -8,7 +8,7 @@ const nextConfig = {
   images: {
     unoptimized: true
   },
-  output: "export",
+  output: isGithubPages ? "export" : undefined,
   reactStrictMode: true,
   trailingSlash: true
 };

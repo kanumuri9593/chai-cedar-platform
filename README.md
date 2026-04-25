@@ -29,6 +29,7 @@ Fill:
 ```bash
 NEXT_PUBLIC_SUPABASE_URL=https://bkvggutxgjeqsvxwkanu.supabase.co
 NEXT_PUBLIC_SUPABASE_ANON_KEY=
+NEXT_PUBLIC_OWNER_PASSWORD=cedar2026
 SUPABASE_SERVICE_ROLE_KEY=
 OPENAI_API_KEY=
 ```
@@ -57,6 +58,14 @@ The Supabase project URL secret is already:
 ```bash
 NEXT_PUBLIC_SUPABASE_URL=https://bkvggutxgjeqsvxwkanu.supabase.co
 ```
+
+Set the shared owner password for the lightweight dashboard gate:
+
+```bash
+gh secret set NEXT_PUBLIC_OWNER_PASSWORD --repo kanumuri9593/chai-cedar-platform
+```
+
+This is convenience-only protection for a static/public build. Keep Supabase RLS enabled for real cloud writes.
 
 It creates:
 
