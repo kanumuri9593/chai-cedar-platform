@@ -27,7 +27,7 @@ cp .env.local.example .env.local
 Fill:
 
 ```bash
-NEXT_PUBLIC_SUPABASE_URL=
+NEXT_PUBLIC_SUPABASE_URL=https://bkvggutxgjeqsvxwkanu.supabase.co
 NEXT_PUBLIC_SUPABASE_ANON_KEY=
 SUPABASE_SERVICE_ROLE_KEY=
 OPENAI_API_KEY=
@@ -36,6 +36,27 @@ OPENAI_API_KEY=
 ## Supabase Setup
 
 Apply the migration in `supabase/migrations/20260425130000_chai_cedar_platform.sql`.
+Then apply `supabase/migrations/20260425143000_finance_contractor_tracking.sql`.
+
+CLI setup for project `bkvggutxgjeqsvxwkanu`:
+
+```bash
+npx supabase login
+npx supabase link --project-ref bkvggutxgjeqsvxwkanu
+npx supabase db push
+```
+
+GitHub Pages needs the public anon key at build time:
+
+```bash
+gh secret set NEXT_PUBLIC_SUPABASE_ANON_KEY --repo kanumuri9593/chai-cedar-platform
+```
+
+The Supabase project URL secret is already:
+
+```bash
+NEXT_PUBLIC_SUPABASE_URL=https://bkvggutxgjeqsvxwkanu.supabase.co
+```
 
 It creates:
 
@@ -45,6 +66,10 @@ It creates:
 - `tasks`
 - `expenses`
 - `revenue`
+- `contractors`
+- `financial_transactions`
+- `contractor_payments`
+- `project_milestones`
 - `media_assets`
 - `scenario_versions`
 - `model_versions`
