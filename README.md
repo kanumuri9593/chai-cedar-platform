@@ -29,7 +29,7 @@ Fill:
 ```bash
 NEXT_PUBLIC_SUPABASE_URL=https://bkvggutxgjeqsvxwkanu.supabase.co
 NEXT_PUBLIC_SUPABASE_ANON_KEY=
-NEXT_PUBLIC_OWNER_PASSWORD=cedar2026
+NEXT_PUBLIC_OWNER_PASSWORD=
 SUPABASE_SERVICE_ROLE_KEY=
 OPENAI_API_KEY=
 ```
@@ -65,7 +65,7 @@ Set the shared owner password for the lightweight dashboard gate:
 gh secret set NEXT_PUBLIC_OWNER_PASSWORD --repo kanumuri9593/chai-cedar-platform
 ```
 
-This is convenience-only protection for a static/public build. Keep Supabase RLS enabled for real cloud writes.
+Never commit the real value. Because it is a `NEXT_PUBLIC_` variable it is built into the site's JavaScript, so anyone can read it from the deployed page: this gate is convenience-only and does not protect data. Keep Supabase RLS enabled for real cloud writes. If the secret is not set, the gate stays locked.
 
 It creates:
 

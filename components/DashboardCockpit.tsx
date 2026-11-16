@@ -419,7 +419,7 @@ function SupabaseStatus({ property }: { property: PropertyRow | null }) {
   );
 }
 
-const ownerPassword = process.env.NEXT_PUBLIC_OWNER_PASSWORD || "cedar2026";
+const ownerPassword = process.env.NEXT_PUBLIC_OWNER_PASSWORD ?? "";
 
 function PasswordGate({ children }: { children: React.ReactNode }) {
   const [checking, setChecking] = useState(true);
@@ -435,6 +435,10 @@ function PasswordGate({ children }: { children: React.ReactNode }) {
   function unlock(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setError(null);
+    if (!ownerPassword) {
+      setError("Owner password is not set for this build.");
+      return;
+    }
     if (password === ownerPassword) {
       window.localStorage.setItem("chai-cedar-owner-unlocked", "true");
       setUnlocked(true);
