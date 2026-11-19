@@ -419,66 +419,26 @@ function SupabaseStatus({ property }: { property: PropertyRow | null }) {
   );
 }
 
-const ownerPassword = process.env.NEXT_PUBLIC_OWNER_PASSWORD ?? "";
+// The owner gate runs on the server (proxy.ts, OWNER_PASSWORD). A static
+// GitHub Pages export has no server, so there the dashboard stays hidden.
+const isStaticExport = process.env.NEXT_PUBLIC_STATIC_EXPORT === "true";
 
 function PasswordGate({ children }: { children: React.ReactNode }) {
-  const [checking, setChecking] = useState(true);
-  const [unlocked, setUnlocked] = useState(false);
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    setUnlocked(window.localStorage.getItem("chai-cedar-owner-unlocked") === "true");
-    setChecking(false);
-  }, []);
-
-  function unlock(event: React.FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    setError(null);
-    if (!ownerPassword) {
-      setError("Owner password is not set for this build.");
-      return;
-    }
-    if (password === ownerPassword) {
-      window.localStorage.setItem("chai-cedar-owner-unlocked", "true");
-      setUnlocked(true);
-      return;
-    }
-    setError("Wrong password.");
-  }
-
-  if (checking) return <main className="dashboard-main">Checking owner access...</main>;
-
-  if (!unlocked) {
-    return (
-      <main className="dashboard">
-        <div className="dashboard-main" style={{ maxWidth: 520 }}>
-          <p className="section-kicker">Owner access</p>
-          <h1>
-            <Lock size={34} /> Planning cockpit
-          </h1>
-          <p className="dashboard-muted">
-            Enter the shared Chai & Cedar owner password. This keeps the screen simple for you and your wife.
-          </p>
-          <form className="stack-form" onSubmit={unlock} style={{ marginTop: 24 }}>
-            <input
-              aria-label="Owner password"
-              placeholder="owner password"
-              type="password"
-              value={password}
-              onChange={(event) => setPassword(event.target.value)}
-            />
-            {error && <p style={{ color: "#f2a4a4" }}>{error}</p>}
-            <button className="solid-link" type="submit" style={{ justifyContent: "center" }}>
-              Sign in
-            </button>
-          </form>
-        </div>
-      </main>
-    );
-  }
-
-  return <>{children}</>;
+  if (!isStaticExport) return <>{children}</>;
+  return (
+    <main className="dashboard">
+      <div className="dashboard-main" style={{ maxWidth: 520 }}>
+        <p className="section-kicker">Owner access</p>
+        <h1>
+          <Lock size={34} /> Planning cockpit
+        </h1>
+        <p className="dashboard-muted">
+          The owner dashboard is private and opens only on the main Chai & Cedar site, where you sign in with the
+          owner password.
+        </p>
+      </div>
+    </main>
+  );
 }
 
 function readStoredRows<T>(key: string, fallback: T[]) {

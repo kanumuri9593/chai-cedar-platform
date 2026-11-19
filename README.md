@@ -29,7 +29,7 @@ Fill:
 ```bash
 NEXT_PUBLIC_SUPABASE_URL=https://bkvggutxgjeqsvxwkanu.supabase.co
 NEXT_PUBLIC_SUPABASE_ANON_KEY=
-NEXT_PUBLIC_OWNER_PASSWORD=
+OWNER_PASSWORD=
 SUPABASE_SERVICE_ROLE_KEY=
 OPENAI_API_KEY=
 ```
@@ -59,13 +59,9 @@ The Supabase project URL secret is already:
 NEXT_PUBLIC_SUPABASE_URL=https://bkvggutxgjeqsvxwkanu.supabase.co
 ```
 
-Set the shared owner password for the lightweight dashboard gate:
+The owner dashboard (`/dashboard`) is protected on the server by `proxy.ts`, which asks for the owner password (browser sign-in prompt, any username). Set it in Vercel as `OWNER_PASSWORD` (type Secret, Production). It has no `NEXT_PUBLIC_` prefix, so it never ships in the page's JavaScript. If it is not set, the dashboard returns 503.
 
-```bash
-gh secret set NEXT_PUBLIC_OWNER_PASSWORD --repo kanumuri9593/chai-cedar-platform
-```
-
-Never commit the real value. Because it is a `NEXT_PUBLIC_` variable it is built into the site's JavaScript, so anyone can read it from the deployed page: this gate is convenience-only and does not protect data. Keep Supabase RLS enabled for real cloud writes. If the secret is not set, the gate stays locked.
+The GitHub Pages build is a static export with no server, so it cannot check a password: there the dashboard shows a notice and points owners to the main site. Keep Supabase RLS enabled for real cloud writes.
 
 It creates:
 

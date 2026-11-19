@@ -3,6 +3,9 @@ const repoName = "chai-cedar-platform";
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  env: {
+    NEXT_PUBLIC_STATIC_EXPORT: isGithubPages ? "true" : "false"
+  },
   assetPrefix: isGithubPages ? `/${repoName}` : undefined,
   basePath: isGithubPages ? `/${repoName}` : undefined,
   images: {
